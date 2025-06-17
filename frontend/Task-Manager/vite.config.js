@@ -4,11 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // ← ова е клучно за Vercel!
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
       '/api': 'http://localhost:8000'
-    },
-    historyApiFallback: true // <-- Сега е правилно
+    }
   }
 });
